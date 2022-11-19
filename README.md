@@ -48,3 +48,11 @@ Project/urls < include('App.urls')
     
 - Tags : Tags are surrounded by {% and %} \
     *provide arbitrary logic in the rendering process.This definition is deliberately vague. For example, a tag can output content, serve as a control structure e.g. an “if” statement or a “for” loop, grab content from a database, or even enable access to other template tags.*
+    
+## 4. Admin
+#### Create Super User 
+```
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
+```
