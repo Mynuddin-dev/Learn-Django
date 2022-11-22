@@ -52,7 +52,10 @@ Project/urls < include('App.urls')
 ## 4. Admin
 #### Create Super User 
 ```
+python manage.py createsuperuser
+```
+#### no such table: django_session 
+```
 python manage.py makemigrations
 python manage.py migrate
-python manage.py createsuperuser
 ```
