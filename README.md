@@ -2,6 +2,18 @@
   <h2 align="center"> Learn-Django <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28"></h2> 
 </p>
 
+-  **Django** : Python based Server Side Web framework 
+-  **Web FrameWork** : Collections of Modules, Packages and librarues designed to speed up  depelopment process.
+-  Django follow MVT architectural pattern.
+-  **MVC** = View <> Controller <> Model
+    - **View (The Customer Who Order food) :**  It displays the data to the user and sends user actions to the controller for processing.
+    - **Controller(The Waiter) :** Acts as an intermediary between the Model and the View. It processes user requests, retrieves data from the Model, and updates the View accordingly. It handles user input and updates the model and view accordingly.
+    - **Model(The chef) :**  It manages the data, responds to queries, and interacts with the database. Handles database operations such as CRUD (Create, Read, Update, Delete) operations. Make the receipe for View(Customer based on their requirement) via contoller.  
+-  **MVT** = Template <> View <> Model
+    - **Template :** Handles the presentation layer. It consists of HTML files with Django template language (DTL) syntax that allows embedding Python-like code to dynamically generate content based on data from the Model. These templates represent the user interface and are responsible for rendering the final HTML output.
+    - **View (Act as a Controller in MVC):** Handles the user requests and business logic. It receives HTTP requests, processes them, interacts with the Model to retrieve or modify data, and then returns HTTP responses. **Despite being called "views" in Django, they function more like controllers in the MVC pattern.**
+    - **Model** : Same As MVC
+    - **MVC vs MVT** : https://medium.com/dsc-umit/mvc-vs-mvt-architectural-pattern-d306a56dce55
 
 ## 1. Setting Environment
 - Create Virtual Environment : ```python3 -m venv environment_name```
