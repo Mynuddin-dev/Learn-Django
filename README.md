@@ -20,11 +20,14 @@
 - Activate The Environmet : ``` source environment_name/bin/activate```
 - Install Django : ```pip install django```
 - Check version: ```django-admin --version ```
+- Available Django Subcommand :```django-admin```
 - Create Project : ``` django-admin startproject project_name```
 - Check the tree structure and run the server : ```python manage.py runserver```
 - Create App : ```python manage.py startapp app_name```
 #### Project vs App
-What’s the difference between a project and an app? An app is a web application that does something – e.g., a blog system, a database of public records or a small poll app. A project is a collection of configuration and apps for a particular website. A project can contain multiple apps. An app can be in multiple projects.
+What’s the difference between a project and an app? An app is a web application that does something – e.g., a blog system, a database of public records or a small poll app. A project is a collection of configuration and apps for a particular website.
+***A project can contain multiple apps. ***
+***An app can be in multiple projects. ***
 
 **App : Common files**
 ``` 
