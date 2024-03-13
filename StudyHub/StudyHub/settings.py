@@ -13,7 +13,7 @@ Configuration of my project is done in this file.
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -58,7 +58,11 @@ ROOT_URLCONF = 'StudyHub.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'Templates',
+            BASE_DIR / 'Base/Templates',
+            
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

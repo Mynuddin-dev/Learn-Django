@@ -1,9 +1,22 @@
 from django.shortcuts import render
-# Create your views here.
-from django.http import HttpResponse
+
+ROOMS = [
+    {'id': 1, 'name': 'Lets learn python!'},
+    {'id': 2, 'name': 'Design with me'},
+    {'id': 3, 'name': 'Frontend developers'},
+    ]
 
 def home(request):
-    return HttpResponse('Home Page')
+    # print(ROOMS)
+    context = {'ROOMS': ROOMS}
+    return render(request, 'Base/home.html' , context)
 
-def rooms(request):
-    return HttpResponse('Rooms Page')
+def rooms(request , pk):
+    print(pk)
+    ROOM =None
+    for i in ROOMS:
+        if i['id'] == int(pk):
+            ROOM = i
+            
+    context = {'ROOM': ROOM}
+    return render(request, 'Base/rooms.html' , context)
