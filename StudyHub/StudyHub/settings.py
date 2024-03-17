@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    # Django by default has session based authentication
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
