@@ -1,6 +1,6 @@
 from django.shortcuts import render , redirect
 from django.db.models import Q
-from .models import Room , Topic
+from .models import Room , Topic , Message
 from .forms import RoomForm
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -84,8 +84,18 @@ def home(request):
 def rooms(request , pk):
 
     ROOM = Room.objects.get(id=pk)   
+    Room_Messages = ROOM.message_set.all().order_by('-created') # Many to one
+    participants = ROOM.participants.all() # Many to Many
+    if request.method == 'POST':
+        message = Message.objects.create(
+            user = request.user,
+            room = ROOM,
+            body_value = request.POST['body_value']
+        )
+        ROOM.participants.add(request.user)
+        return redirect('rooms' , pk=ROOM.id) 
 
-    context = {'ROOM': ROOM}
+    context = {'ROOM': ROOM , 'Room_Messages': Room_Messages , 'participants': participants}
     return render(request, 'Base/rooms.html' , context)
 
 @login_required(login_url='login')
@@ -134,3 +144,14 @@ def deleteRoom(request,pk):
         return redirect('home')
     return render(request, 'Base/delete.html' , {'obj':room})
 
+@login_required(login_url='login')
+def deleteMessage(request,pk):
+    message = Message.objects.get(id=pk)
+
+    if request.user != message.user:
+        return HttpResponse('You are not allowed here!')
+    
+    if request.method == 'POST':
+        message.delete()
+        return redirect('home')
+    return render(request, 'Base/delete.html' , {'obj':message})

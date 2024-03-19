@@ -19,7 +19,7 @@ class Room(models.Model):
     topic = models.ForeignKey(Topic , on_delete=models.SET_NULL , null=True )
     name = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)
-    # participants = models 
+    participants = models.ManyToManyField(User , related_name='participants' , blank=True)
 
     # updated time(when the room is updated)
     updated = models.DateTimeField(auto_now=True) 
