@@ -9,7 +9,7 @@
 
 	{% endif %}
 
-	<span>@{{ROOM.host.username}}</span>
+	<a href="{% url 'profile' ROOM.host.id %}">@{{ROOM.host.username}}</a>
 	<h5>
 		{{ ROOM.id }} : <a href="{% url 'rooms' ROOM.id %}">{{ ROOM.name }}</a>
 	</h5>
