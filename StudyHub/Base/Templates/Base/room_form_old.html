@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+
+<!-- Manually  -->
+<!-- Django Already have it built-in model form-->
+{% block content %}
+<div>
+    <form method="POST" action="">
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+    </form>
+</div>
+{% endblock %}
