@@ -1,13 +1,14 @@
 from django.shortcuts import render , redirect
 from django.db.models import Q
 from .models import Room , Topic , Message
-from .forms import RoomForm
+from .forms import RoomForm, UserForm
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate , login , logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
+
 # ROOMS = [
 #     {'id': 1, 'name': 'Lets learn python!'},
 #     {'id': 2, 'name': 'Design with me'},
@@ -184,3 +185,14 @@ def deleteMessage(request,pk):
         message.delete()
         return redirect('home')
     return render(request, 'Base/delete.html' , {'obj':message})
+
+@login_required(login_url='login')
+def updateUser(request):
+    user = request.user
+    form = UserForm(instance= user)
+    if request.method == 'POST':
+        form = UserForm(request.POST, instance= user)
+        if form.is_valid():
+            form.save()
+            return redirect('profile', pk=user.id)
+    return render(request, 'Base/update-user.html', {'form': form})
