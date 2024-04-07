@@ -31,9 +31,15 @@ from django.urls import path , include
 # def rooms(request):
 #     return HttpResponse('Rooms Page')
 
+from django.conf import settings 
+from django.conf.urls.static import static
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Base.urls')),
     path('api/', include('Base.api.urls')),
 
 ]
+
+urlpatterns += static(settings.MEDIA_URL , document_root=settings.MEDIA_ROOT)

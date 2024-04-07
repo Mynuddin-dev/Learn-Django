@@ -5,7 +5,7 @@
 		<div class="room">
 			<div class="room__top">
 				<div class="room__topLeft">
-					<a href="{{ request.META.HTTP_REFERER }}">
+					<a href="{% url 'home' %}">
 						<svg
 							version="1.1"
 							xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +78,7 @@
 						<p>Hosted By</p>
 						<a href="{% url 'profile' ROOM.host.id %}" class="room__author">
 							<div class="avatar avatar--small">
-								<img src="https://randomuser.me/api/portraits/men/37.jpg" />
+								<img src="{{ ROOM.host.avatar.url }}" />
 							</div>
 							<span>@{{ROOM.host.username}}</span>
 						</a>
@@ -99,7 +99,7 @@
 									<a href="{% url 'profile' message.user.id %}" class="thread__authorInfo">
 										<div class="avatar avatar--small">
 											<img
-												src="https://randomuser.me/api/portraits/men/37.jpg"
+												src="{{ ROOM.host.avatar.url }}"
 											/>
 										</div>
 										<span>@{{message.user.username}}</span>
@@ -152,7 +152,7 @@
 
 				<a href="{% url 'profile' user.id %}" class="participant">
 					<div class="avatar avatar--medium">
-						<img src="https://randomuser.me/api/portraits/men/37.jpg" />
+						<img src="{{ user.avatar.url }}" />
 					</div>
 					<p>
 						{{user.username}}

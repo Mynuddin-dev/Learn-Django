@@ -15,13 +15,13 @@
 
 				<form class="form" action="" method="POST">
 					{% csrf_token %}
-          <div class="form__group form__group">
-						<label for="room_name">Username</label>
+					<div class="form__group form__group">
+						<label for="room_name">Email</label>
 						<input
-							id="username"
-							name="username"
+							id="email"
+							name="email"
 							type="text"
-							placeholder="prince_alex"
+							placeholder="prince@gmail.com"
 						/>
 					</div>
 					<div class="form__group">
@@ -67,22 +67,20 @@
 		<div class="layout__box">
 			<div class="layout__boxHeader">
 				<div class="layout__boxTitle">
-					<h3>Login</h3>
+					<h3>Register</h3>
 				</div>
 			</div>
 			<div class="layout__body">
 				<h2 class="auth__tagline">Find your study partner</h2>
 
 				<form class="form" action="" method="POST">
-          {% csrf_token %}
-
-          {% for field in form %}
+					{% csrf_token %} {% for field in form %}
 					<div class="form__group form__group">
 						<label for="room_name">{{field.label}}</label>
 						{{field}}
 					</div>
-					
-          {% endfor %}
+
+					{% endfor %}
 
 					<button class="btn btn--main" type="submit">
 						<svg
