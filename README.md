@@ -34,19 +34,21 @@ What’s the difference between a project and an app? An app is a web applicatio
 **_A project can contain multiple apps. An app can be in multiple projects._**
 
 **Project : Common files**
-StudyHub = Outer Project Folder / Root Directory
-StudyHub > StudyHub = Inner Project Folder / Default Application
-StudyHub > StudyHub > asgi.py 
-StudyHub > StudyHub > __init__.py 
-StudyHub > StudyHub > settings.py 
-StudyHub > StudyHub > urls.py 
-StudyHub > StudyHub > wsgi.py
-StudyHub > manage.py
+```
+- StudyHub = Outer Project Folder / Root Directory
+- StudyHub > StudyHub = Inner Project Folder / Default Application
+- StudyHub > StudyHub > __init__.py 
+- StudyHub > StudyHub > settings.py 
+- StudyHub > StudyHub > urls.py 
+- StudyHub > StudyHub > wsgi.py
+- StudyHub > StudyHub > asgi.py 
+- StudyHub > manage.py
 
-**__init__ .py**
-The folder which contains __init__.py is considered as pyhon package. If I want to create StudyHub as a python package, this file tells Python that the directory should be treated as a package and allows you to organize your code into logical modules and sub-packages.
+```
 
-**settings .py**
+- **__init__ .py** : The folder which contains __init__.py is considered as pyhon package. If I want to create StudyHub as a python package, this file tells Python that the directory should be treated as a package and allows you to organize your code into logical modules and sub-packages.
+
+- **settings .py**
 This file contains all the information or data about project settings. Example: Database congf information, Template, Installed Apps , Validators etc.
 
 **urls .py**
