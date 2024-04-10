@@ -16,6 +16,7 @@ from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+# Absulate path of the project directory is stored in BASE_DIR
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,7 +27,10 @@ SECRET_KEY = 'django-insecure-dhb147g*c-5k&9=b9b)$^k(rf)$*8i17bb&@7u=q+9j&p1uojw
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# For development purpose, DEBUG is set to True 
+# To Display the details error of the pages in the browser 
 
+# Domain or host name Django site can serve
 ALLOWED_HOSTS = []
 
 
@@ -34,6 +38,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Default built in applications
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # My custom application
     'Base.apps.BaseConfig',
     'rest_framework',
     'corsheaders'
@@ -66,8 +72,10 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'StudyHub.urls'
 
 TEMPLATES = [
-    {
+    {   
+        # The template backend to use.
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        # Directories where Django will look for templates source files, in search order.
         'DIRS': [
             BASE_DIR / 'Templates',
             BASE_DIR / 'Base/Templates',
@@ -91,6 +99,9 @@ WSGI_APPLICATION = 'StudyHub.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# Define the database to use in the project
+# In this case, we are using SQLite database as default.
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -98,6 +109,17 @@ DATABASES = {
     }
 }
 
+# If you want to use PostgreSQL database, you can use the following configuration as example.
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': YOUR_DB_NAME,
+#         'USER': USERNAME,
+#         'PASSWORD': PASSWORD_FOR_DB,
+#         'HOST': 'localhost'  // in Development.
+#         'PORT': '5432' // Default port for postgresql
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

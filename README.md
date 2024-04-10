@@ -33,6 +33,54 @@
 What’s the difference between a project and an app? An app is a web application that does something – e.g., a blog system, a database of public records or a small poll app. A project is a collection of configuration and apps for a particular website.
 **_A project can contain multiple apps. An app can be in multiple projects._**
 
+**Project : Common files**
+StudyHub = Outer Project Folder / Root Directory
+│   ├── StudyHub = Inner Project Folder / Default Application
+│   │   ├── asgi.py 
+│   │   ├── __init__.py 
+│   │   ├── settings.py 
+│   │   ├── urls.py 
+│   │   └── wsgi.py
+│   └──  manage.py
+
+**__init__ .py**
+The folder which contains __init__.py is considered as pyhon package. If I want to create StudyHub as a python package, this file tells Python that the directory should be treated as a package and allows you to organize your code into logical modules and sub-packages.
+**settings .py**
+This file contains all the information or data about project settings. Example: Database congf information, Template, Installed Apps , Validators etc.
+**urls .py**
+This file contains information of  all url attached with application.
+**manage .py**
+A command-line utility that lets you interact with this Django project in various ways . [More details](https://docs.djangoproject.com/en/5.0/ref/django-admin/).
+**ASGI and WSGI**
+ASGI (Asynchronous Server Gateway Interface) and WSGI (Web Server Gateway Interface) are both specifications that define **how web servers communicate with web applications**, but they serve different purposes and are used in different contexts within the Django framework.
+
+**WSGI (Web Server Gateway Interface):**
+- WSGI is a standard interface between web servers and Python web applications or frameworks like Django.
+- It's synchronous, meaning that each request is processed one after the other in a blocking manner.
+- Handles one request at a time.
+- Blocks the server until the processing of one request is completed.
+- WSGI is used with traditional synchronous web servers.
+- In Django, WSGI is used primarily for **deploying** Django applications on traditional web servers.
+
+**ASGI (Asynchronous Server Gateway Interface):**
+- ASGI is an asynchronous version of WSGI, designed to support asynchronous web frameworks and applications.
+- It allows for handling long-lived connections, WebSockets, and other asynchronous operations.
+- Allows parallel processing of multiple requests at a time.
+- Does not block the server
+- ASGI is used with asynchronous web servers and frameworks like Django Channels, which enable handling of real-time applications, chat systems, and other asynchronous features.
+
+**When use what?**
+In Simple Terms:
+- Both ASGI (Asynchronous Server Gateway Interface) and WSGI (Web Server Gateway Interface) are related to deploying web applications in Python, but they serve different purposes and are used in different contexts.
+- If your app is like a regular store: Use WSGI. Customers come in, buy things one at a time, and leave.
+- If your app is like a bustling marketplace: Use ASGI. Lots of people are doing different things all at once, like browsing, buying, and chatting with vendors.
+
+
+So, if your application needs to handle real-time interactions or multiple tasks simultaneously, choose ASGI. If it's a more traditional web application where tasks can be handled one at a time, WSGI is sufficient.
+
+When run the project by  python manage.py runserver; StudyHub/__pycache__ : Create the cache files for the project to load the project faster.
+
+
 **App : Common files**
 
 ```
@@ -42,16 +90,6 @@ apps.py
 models.py
 tests.py
 views.py
-urls.py
-```
-
-**Project : Common files**
-
-```
-__init__.py
-asgi.py
-wsgi.py
-setting.py
 urls.py
 ```
 
