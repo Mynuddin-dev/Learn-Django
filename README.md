@@ -74,11 +74,11 @@ ASGI (Asynchronous Server Gateway Interface) and WSGI (Web Server Gateway Interf
   - Does not block the server
   - ASGI is used with asynchronous web servers and frameworks like Django Channels, which enable handling of real-time applications, chat systems, and other asynchronous features.
 
-**When use what?**
-In Simple Terms:
-- Both ASGI (Asynchronous Server Gateway Interface) and WSGI (Web Server Gateway Interface) are related to deploying web applications in Python, but they serve different purposes and are used in different contexts.
-- If your app is like a regular store: Use WSGI. Customers come in, buy things one at a time, and leave.
-- If your app is like a bustling marketplace: Use ASGI. Lots of people are doing different things all at once, like browsing, buying, and chatting with vendors.
+- **When use what?** 
+  In Simple Terms:
+  - Both ASGI (Asynchronous Server Gateway Interface) and WSGI (Web Server Gateway Interface) are related to deploying web applications in Python, but they serve different purposes and are used in different contexts.
+  - If your app is like a regular store: Use WSGI. Customers come in, buy things one at a time, and leave.
+  - If your app is like a bustling marketplace: Use ASGI. Lots of people are doing different things all at once, like browsing, buying, and chatting with vendors.
 
 
 So, if your application needs to handle real-time interactions or multiple tasks simultaneously, choose ASGI. If it's a more traditional web application where tasks can be handled one at a time, WSGI is sufficient.
