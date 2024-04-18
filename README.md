@@ -131,6 +131,10 @@ python manage.py createsuperuser
 
 `python manage.py makemigrations`
 
+The SQL code will be print which is going to run.
+
+`python manage.py sqlmigrate app_name migration_number`
+
 **Applying Migrations:** After creating migration files, you can apply them to the database using the migrate command: python manage.py migrate. This command executes the migration files in the order they were created, updating the database schema accordingly.
 
 `python manage.py migrate`
