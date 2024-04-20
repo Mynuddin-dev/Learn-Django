@@ -4,7 +4,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm 
-
+from .models import Profile
 ## inherit from UserCreationForm and add email field
 
 class UserRegisterForm(UserCreationForm): 
@@ -17,3 +17,16 @@ class UserRegisterForm(UserCreationForm):
 
 # This is not custom user model , if we just want to add more fields in UserCreationForm then we have to create custom user form.
 # For custom user model we normally use AbstractUser model in models.py file and that was(User) not under Authentication, Authorization and User Management section in admin panel.
+
+
+class UserUpdateForm(forms.ModelForm):
+    email = forms.EmailField()
+
+    class Meta:
+        model = User
+        fields = ['username', 'email']
+
+class ProfileUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['image']
