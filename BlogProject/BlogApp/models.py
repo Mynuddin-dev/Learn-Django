@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
-
+from django.urls import reverse
 # Django's ORM simplifies the process of interacting with databases in web applications by providing a high-level abstraction layer that allows developers to work with Python objects instead of dealing with raw SQL querie.
 
 # - Allow us to access the database in a Object oriented way
@@ -31,3 +31,6 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        return reverse('post-detail', kwargs={'pk': self.pk})
