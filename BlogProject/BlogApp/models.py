@@ -34,3 +34,22 @@ class Post(models.Model):
     
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={'pk': self.pk})
+
+"""
+load data by using the shell
+python manage.py shell
+from BlogApp.models import Post
+
+with open('posts.json') as f:
+    posts_json = json.load(f)
+
+for post in posts:
+    Post.objects.create(title=post['title'], content=post['content'], author_id=post['user_id'])
+
+Post pagination
+from django.core.paginator import Paginator
+posts = ['1', '2', '3', '4', '5']
+p = Paginator(posts, 5)
+p.num_pages
+
+"""
