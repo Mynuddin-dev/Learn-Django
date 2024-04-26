@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: mdmynuddin.iit.se.nstu@gmail.com
+Date: Fri, 26 Apr 2024 12:58:07 -0000
+Message-ID: <171413628724.9546.16218917851780832218@myn>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/password-reset-confirm/MQ/c63dcv-2c41ebdb6df6a5c3d2936e2c5c57dc36/
+
+Your username, in case you’ve forgotten: Mynuddin
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------
