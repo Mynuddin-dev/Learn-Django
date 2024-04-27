@@ -1,6 +1,6 @@
 ### BlogProject Project
 
-1. Go to ** BlogProject** project directory and copy the url
+1. Go to **BlogProject** project directory and copy the url
 
    `https://github.com/Mynuddin-dev/Learn-Django/tree/main/BlogProject`
 
