@@ -1,9 +1,14 @@
 ### StudyHub Project
 1. Go to **StudyHub** project directory and **copy** the url 
+
     ```https://github.com/Mynuddin-dev/Learn-Django/tree/main/StudyHub ```
-2. Now go to this url :  ``` https://yehonal.github.io/DownGit/#/home ``` 
+
+2. Now go to this url 
+    ``` https://yehonal.github.io/DownGit/#/home ``` 
+
 3. Paste the StudyHub project url and Download the Project.
 4. Unzip the project and create a virtual environment 
+
     ``` 
     # Create Virtual Env
     python3 -m venv your_env_name
