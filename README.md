@@ -3,6 +3,7 @@
 </p>
 
 - #### [Django Documentation](https://docs.djangoproject.com/en/5.0/)
+- #### [Awesome Django Resorce](https://github.com/wsvincent/awesome-django?tab=readme-ov-file#resources)
 
 - **Django** : Python based Server Side Web framework
 - **Web FrameWork** : Collections of Modules, Packages and librarues designed to speed up depelopment process.
